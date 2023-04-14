@@ -1,0 +1,9 @@
+version: 2.1
+jobs:
+    build:
+      docker:
+        - image: ubuntu:latest
+      steps:
+        - checkout
+        - run: apt update && apt install build-essential -y
+        - run: cd src && make test
